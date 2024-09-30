@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Webvs2.props" />
+</Project>
