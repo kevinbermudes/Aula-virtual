@@ -17,13 +17,13 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-builder.Services.AddDbContext<AplicationDbContext>(options =>
-    options.UseNpgsql(
-        builder.Configuration.GetConnectionString("Host=localhost;Username=kevin;Password=1234;Database=mydatabase")));
+// builder.Services.AddDbContext<AplicationDbContext>(options =>
+//     options.UseNpgsql(
+//         builder.Configuration.GetConnectionString("Host=localhost;Username=kevin;Password=1234;Database=mydatabase")));
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
 app.UseRouting();
 
 app.UseAuthorization();
