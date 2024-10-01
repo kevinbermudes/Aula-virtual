@@ -11,9 +11,10 @@ import {Tareas} from "../models/tareas";
 
 export class TareasService {
   private api= 'http://localhost:5151/api/tarea1';
-  constructor(private httpClient: HttpClient) {
+
+  constructor(private http: HttpClient) {
   }
   getTareas():Observable<Tareas[]>{
-    return this.httpClient.get<Tareas[]>(this.api)
+    return this.http.get<Tareas[]>(this.api)
   }
 }

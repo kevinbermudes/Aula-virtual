@@ -1,6 +1,6 @@
 ﻿export class Tareas {
-  Id?: number;
-  Nombre? :string;
-  Descripcion?: string;
-  FechaEx?: string;
+  id?: number;
+  nombre? :string;
+  descripcion?: string;
+  fechaEx?: string;
 }
