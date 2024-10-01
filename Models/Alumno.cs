@@ -27,7 +27,7 @@ namespace Webvs2.Models
         
         [ForeignKey("Tareas")]
         public int? TareaId { get; set; }
-        public Tareas? Tareas { get; set; } 
+        public ICollection<Tareas>? Tareas { get; set; } 
 
     }
 }

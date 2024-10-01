@@ -18,6 +18,8 @@ namespace Webvs2.Models
         public string? Descripcion { get; set; }
         public string  FechaEx { get; set; }
 
-  
+        public ICollection<Alumno> Alumnos { get; set; }
+
+
     }
 }
