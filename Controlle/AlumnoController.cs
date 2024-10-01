@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Webvs2.DTO;
 using Webvs2.Models;
 using Webvs2.Service;
 
@@ -16,18 +17,18 @@ namespace Webvs2.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Alumno>> Get() =>
+        public ActionResult<IEnumerable<AlumnoDto>> Get() =>
             Ok(_alumnoService.GetAlumnos());
 
         [HttpGet("{id}")]
-        public ActionResult<Alumno> Get(int id)
+        public ActionResult<AlumnoDto> Get(int id)
         {
             var alumno = _alumnoService.GetAlumnoById(id);
             return alumno != null ? Ok(alumno) : NotFound();
         }
 
         [HttpPost]
-        public ActionResult<Alumno> Post(Alumno alumno)
+        public ActionResult<AlumnoDto> Post(Alumno alumno)
         {
             var createdAlumno = _alumnoService.CreateAlumno(alumno);
             return CreatedAtAction(nameof(Get), new { id = createdAlumno.Id }, createdAlumno);

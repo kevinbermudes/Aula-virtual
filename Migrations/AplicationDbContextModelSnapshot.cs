@@ -82,8 +82,9 @@ namespace Webvs2.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<DateOnly>("FechaEx")
-                        .HasColumnType("date");
+                    b.Property<string>("FechaEx")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Nombre")
                         .IsRequired()

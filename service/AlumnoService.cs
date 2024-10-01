@@ -6,7 +6,7 @@ namespace Webvs2.Service
     public class AlumnoService : IAlumnoService
     {
         private readonly AplicationDbContext _context;
-
+        
         public AlumnoService(AplicationDbContext context)
         {
             _context = context;

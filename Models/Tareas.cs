@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.InteropServices.JavaScript;
 
 namespace Webvs2.Models
 {
@@ -16,8 +17,8 @@ namespace Webvs2.Models
         [Column(TypeName = "varchar(100)")]
         public string? Descripcion { get; set; }
 
-        [Required]
-        public DateOnly FechaEx { get; set; }
+        
+        public string  FechaEx { get; set; }
 
   
     }
