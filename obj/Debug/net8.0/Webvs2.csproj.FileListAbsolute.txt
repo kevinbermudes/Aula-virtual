@@ -264,3 +264,4 @@ C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Angular
 C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Angular\tsconfig.app.json
 C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Angular\tsconfig.json
 C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Angular\tsconfig.spec.json
+C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\obj\Debug\net8.0\Webvs2.sourcelink.json

@@ -17,6 +17,8 @@ namespace Webvs2.Models
         [Column(TypeName = "varchar(100)")]
         public string? Descripcion { get; set; }
         public string  FechaEx { get; set; }
+        
+        public virtual Alumno? Alumno { get; set; }
 
         public ICollection<Alumno> Alumnos { get; set; }
 
