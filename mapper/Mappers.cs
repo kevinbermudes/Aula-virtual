@@ -1,5 +1,6 @@
 ﻿using Webvs2.DTO;
 using Webvs2.Models;
+using Webvs2.Service;
 
 
 namespace Webvs2.Mappers
@@ -13,7 +14,7 @@ namespace Webvs2.Mappers
                 Id = alumno.Id,
                 Nombre = alumno.Nombre,
                 Apellido = alumno.Apellido,
-                AulaId = alumno.AulaId,
+                AulaId = alumno.Aula?.Id,
                 TareaId = alumno.TareaId
             };
         }
@@ -24,8 +25,7 @@ namespace Webvs2.Mappers
             {
                 Id = aula.Id,
                 Nombre = aula.Nombre,
-                //nombreAlumno= aula.alumnos.Select(i=> i.alumnos).toList()?.nombre
-            };
+                AlumnoNombres = aula.Alumnos.Select(a => a.Nombre).ToList()            };
         }
 
         public static TareaDto ToDto(this Tareas tareas)
@@ -39,36 +39,36 @@ namespace Webvs2.Mappers
             };
         }
 
-        public static Alumno ToModel(this AlumnoDto alumnoDto)
-        {
-            return new Alumno
-            {
-                Id = alumnoDto.Id,
-                Nombre = alumnoDto.Nombre,
-                Apellido = alumnoDto.Apellido,
-                AulaId = alumnoDto.AulaId,
-                TareaId = alumnoDto.TareaId
-            };
-        }
+        // public static Alumno ToModel(this AlumnoDto alumnoDto)
+        // {
+        //     return new Alumno
+        //     {
+        //         Id = alumnoDto.Id,
+        //         Nombre = alumnoDto.Nombre,
+        //         Apellido = alumnoDto.Apellido,
+        //         Aula = alumnoDto.AulaId,
+        //         TareaId = alumnoDto.TareaId
+        //     };
+        // }
 
-        public static Aula ToModel(this AulaDto aulaDto)
-        {
-            return new Aula
-            {
-                Id = aulaDto.Id,
-                Nombre = aulaDto.Nombre,
-            };
-        }
+        // public static Aula ToModel(this AulaDto aulaDto)
+        // {
+        //     return new Aula
+        //     {
+        //         Id = aulaDto.Id,
+        //         Nombre = aulaDto.Nombre,
+        //     };
+        // }
 
-        public static Tareas ToModel(this TareaDto tareasDto)
-        {
-            return new Tareas
-            {
-                Id = tareasDto.Id,
-                Nombre = tareasDto.Nombre,
-                Descripcion = tareasDto.Descripcion,
-                FechaEx = tareasDto.FechaEx
-            };
-        }
+        // public static Tareas ToModel(this TareaDto tareasDto)
+        // {
+        //     return new Tareas
+        //     {
+        //         Id = tareasDto.Id,
+        //         Nombre = tareasDto.Nombre,
+        //         Descripcion = tareasDto.Descripcion,
+        //         FechaEx = tareasDto.FechaEx
+        //     };
+        // }
     }
 }

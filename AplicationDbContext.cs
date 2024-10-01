@@ -15,13 +15,15 @@ namespace Webvs2
         }
 
 
+
         public DbSet<Tareas> Tareas { get; set; }
         public DbSet<Alumno> Alumnos { get; set; }
         public DbSet<Aula> Aulas { get; set; }
 
-        // public void onInit()
-        // {
-        //     OnModelCreating(Alumnos);
-        // }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Aula>().HasMany(e => e.Alumnos).WithOne(e => e.Aula);
+            
+        }
     }
 }
