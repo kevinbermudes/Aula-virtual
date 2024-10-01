@@ -258,3 +258,9 @@ C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\obj\Debug\net8.0\Webvs2.
 C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\obj\Debug\net8.0\ref\Webvs2.dll
 C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Npgsql.dll
 C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Angular\angular.json
+C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Angular\package-lock.json
+C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Angular\package.json
+C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Angular\tsconfig.app.json
+C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Angular\tsconfig.json
+C:\Users\kevin.bermudez\Desktop\Proyectos\Webvs2\Webvs2\bin\Debug\net8.0\Angular\tsconfig.spec.json

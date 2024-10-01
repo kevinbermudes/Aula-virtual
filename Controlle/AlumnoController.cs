@@ -20,33 +20,5 @@ namespace Webvs2.Controllers
         public ActionResult<IEnumerable<AlumnoDto>> Get() =>
             Ok(_alumnoService.GetAlumnos());
 
-        [HttpGet("{id}")]
-        public ActionResult<AlumnoDto> Get(int id)
-        {
-            var alumno = _alumnoService.GetAlumnoById(id);
-            return alumno != null ? Ok(alumno) : NotFound();
-        }
-
-        [HttpPost]
-        public ActionResult<AlumnoDto> Post(Alumno alumno)
-        {
-            var createdAlumno = _alumnoService.CreateAlumno(alumno);
-            return CreatedAtAction(nameof(Get), new { id = createdAlumno.Id }, createdAlumno);
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, Alumno alumno)
-        {
-            if (id != alumno.Id) return BadRequest();
-            _alumnoService.UpdateAlumno(alumno);
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            _alumnoService.DeleteAlumno(id);
-            return NoContent();
-        }
     }
 }

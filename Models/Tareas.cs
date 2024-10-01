@@ -16,8 +16,6 @@ namespace Webvs2.Models
         [Required]
         [Column(TypeName = "varchar(100)")]
         public string? Descripcion { get; set; }
-
-        
         public string  FechaEx { get; set; }
 
   

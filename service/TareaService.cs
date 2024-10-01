@@ -1,4 +1,6 @@
-﻿using Webvs2.Models;
+﻿using Webvs2.DTO;
+using Webvs2.Mappers;
+
 
 namespace Webvs2.Service;
 
@@ -9,34 +11,15 @@ public class TareaService : ITareas
     public TareaService(AplicationDbContext context)
     {
         _context = context;
+     
     }
 
-    public IEnumerable<Tareas> GetTarea() =>
-        _context.Tareas.ToList();
-
-    public Tareas? GetTareaById(int id) =>
-        _context.Tareas.Find(id);
-
-    public Tareas CreateTarea(Tareas tareas)
+    public IEnumerable<TareaDto> GetTarea()
     {
-        _context.Tareas.Add(tareas);
-        _context.SaveChanges();
-        return tareas;
+        var tareas = _context.Tareas.ToList();
+        return tareas.Select(t => t.ToDto()).ToList();
     }
 
-    public void UpdateTarea(Tareas tareas)
-    {
-        _context.Tareas.Update(tareas);
-        _context.SaveChanges();
-    }
+ 
 
-    public void DeleteTarea(int id)
-    {
-        var tarea = _context.Tareas.Find(id);
-        if (tarea != null)
-        {
-            _context.Tareas.Remove(tarea);
-            _context.SaveChanges();
-        }
-    }
 }

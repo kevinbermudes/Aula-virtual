@@ -24,7 +24,6 @@ namespace Webvs2.Mappers
             {
                 Id = aula.Id,
                 Nombre = aula.Nombre,
-                Alumnos = aula.Alumnos?.Select(a => a.ToDto()).ToList()
             };
         }
 
@@ -57,7 +56,6 @@ namespace Webvs2.Mappers
             {
                 Id = aulaDto.Id,
                 Nombre = aulaDto.Nombre,
-                Alumnos = aulaDto.Alumnos?.Select(a => a.ToModel()).ToList()
             };
         }
 

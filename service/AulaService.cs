@@ -1,4 +1,6 @@
-﻿using Webvs2.Models;
+﻿using Webvs2.DTO;
+using Webvs2.Mappers;
+using Webvs2.Models;
 
 namespace Webvs2.Service;
 
@@ -10,32 +12,11 @@ public class AulaService : IAula
             _context = context;
         }
 
-        public IEnumerable<Aula> GetAula() =>
-            _context.Aulas.ToList();
-
-        public Aula? GetAulaById(int id) =>
-            _context.Aulas.Find(id);
-
-        public Aula CreateAula(Aula aula)
+        public IEnumerable<AulaDto> GetAula()
         {
-            _context.Aulas.Add(aula);
-            _context.SaveChanges();
-            return aula;
+            var aula = _context.Aulas.ToList();
+            return aula.Select(t => t.ToDto()).ToList();
         }
 
-        public void UpdateAula(Aula aula)
-        {
-            _context.Aulas.Update(aula);
-            _context.SaveChanges();
-        }
-
-        public void DeleteAula(int id)
-        {
-            var aula = _context.Aulas.Find(id);
-            if (aula !=null)
-            {
-                _context.Aulas.Remove(aula);
-                _context.SaveChanges();
-            }
-        }
+      
     }
