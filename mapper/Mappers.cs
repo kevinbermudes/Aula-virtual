@@ -24,6 +24,7 @@ namespace Webvs2.Mappers
             {
                 Id = aula.Id,
                 Nombre = aula.Nombre,
+                //nombreAlumno= aula.alumnos.Select(i=> i.alumnos).toList()?.nombre
             };
         }
 

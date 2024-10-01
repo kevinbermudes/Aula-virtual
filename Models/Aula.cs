@@ -12,6 +12,6 @@ namespace Webvs2.Models
         [Column(TypeName = "varchar(100)")]
         public string? Nombre { get; set; }
 
-      
+        public IEnumerable<Alumno> Alumnos;
     }
 }

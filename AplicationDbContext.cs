@@ -18,5 +18,10 @@ namespace Webvs2
         public DbSet<Tareas> Tareas { get; set; }
         public DbSet<Alumno> Alumnos { get; set; }
         public DbSet<Aula> Aulas { get; set; }
+
+        // public void onInit()
+        // {
+        //     OnModelCreating(Alumnos);
+        // }
     }
 }

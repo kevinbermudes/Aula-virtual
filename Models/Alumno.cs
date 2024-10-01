@@ -17,9 +17,13 @@ namespace Webvs2.Models
         public string? Apellido { get; set; }
 
 
+        /*
         [ForeignKey("Aula")]
+        */
+        /*
         public int? AulaId { get; set; } 
-        public Aula? Aula { get; set; }
+        */
+        public virtual Aula? Aula { get; set; }
         
         [ForeignKey("Tareas")]
         public int? TareaId { get; set; }
