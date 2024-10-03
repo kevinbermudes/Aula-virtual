@@ -16,8 +16,15 @@ namespace Webvs2.Service
 
         public IEnumerable<AlumnoDto> GetAlumnos()
         {
-            var alumnos = _context.Alumnos.ToList();
-            return alumnos.Select(t => t.ToDto()).ToList();
+          
+            var alumnos = _context.Alumnos
+                .Include(a => a.Aula) 
+                .Include(a => a.AlumnoTareas)
+                .ThenInclude(at => at.Tarea)
+                .ToList();
+
+            return alumnos.Select(a => a.ToDto()).ToList();
+
         }
     }
 }

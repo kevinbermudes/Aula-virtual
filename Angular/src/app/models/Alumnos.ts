@@ -2,5 +2,5 @@
   id:number
   nombre:string
   apellido:string
-  aulaId:number
+  aulaNombre:number
 }

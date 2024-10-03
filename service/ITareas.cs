@@ -6,6 +6,6 @@ namespace Webvs2.Service;
 public interface ITareas
 {
     IEnumerable<TareaDto> GetTarea();
-   
+    
 
 }

@@ -1,4 +1,5 @@
-﻿using Webvs2.DTO;
+﻿using Microsoft.EntityFrameworkCore;
+using Webvs2.DTO;
 using Webvs2.Mappers;
 
 
@@ -16,10 +17,22 @@ public class TareaService : ITareas
 
     public IEnumerable<TareaDto> GetTarea()
     {
-        var tareas = _context.Tareas.ToList();
+        var tareas = _context.Tareas
+            .Include(t => t.AlumnoTareas) 
+            .ThenInclude(at => at.Alumno) 
+            .ToList();
+
         return tareas.Select(t => t.ToDto()).ToList();
     }
 
+    public IEnumerable<TareaDto> GetTareaPorAlumno()
+    {
+        var tareas = _context.Tareas
+            .Include(t => t.AlumnoTareas)
+            .ThenInclude(at => at.Alumno)
+            .ToList();
+        return tareas.Select(t => t.ToDto()).ToList();
+    }
  
 
 }

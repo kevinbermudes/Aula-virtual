@@ -16,7 +16,7 @@ namespace Webvs2.Models
         [Column(TypeName = "varchar(100)")]
         public string? Apellido { get; set; }
 
-
+        [ForeignKey("AulaId")]
         public int? AulaId { get; set; }
         public virtual Aula? Aula { get; set; }
 

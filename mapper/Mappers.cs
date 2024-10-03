@@ -14,8 +14,8 @@ namespace Webvs2.Mappers
                 Id = alumno.Id,
                 Nombre = alumno.NombreAlumno,
                 Apellido = alumno.Apellido,
-                AulaId = alumno.Aula?.Id,
-                TareaId = alumno.AulaId
+                Tareas = alumno.AlumnoTareas?.Select(at => at.Tarea?.Nombre).ToList()
+                
             };
         }
 
@@ -25,7 +25,7 @@ namespace Webvs2.Mappers
             {
                 Id = aula.Id,
                 Nombre = aula.Nombre,
-                NombreAlumnoEnAula = aula.NombreAlumnoEnAula
+                AlumnoNombres = aula.Alumnos?.Select(a => a.NombreAlumno).ToList()
             };
         }
 
@@ -36,40 +36,10 @@ namespace Webvs2.Mappers
                 Id = tareas.Id,
                 Nombre = tareas.Nombre,
                 Descripcion = tareas.Descripcion,
-                FechaEx = tareas.FechaEx
+                FechaEx = tareas.FechaEx,
+                AlumnoNombres = tareas.AlumnoTareas?.Select(at => at.Alumno?.NombreAlumno).ToList()
             };
         }
 
-        // public static Alumno ToModel(this AlumnoDto alumnoDto)
-        // {
-        //     return new Alumno
-        //     {
-        //         Id = alumnoDto.Id,
-        //         Nombre = alumnoDto.Nombre,
-        //         Apellido = alumnoDto.Apellido,
-        //         Aula = alumnoDto.AulaId,
-        //         TareaId = alumnoDto.TareaId
-        //     };
-        // }
-
-        // public static Aula ToModel(this AulaDto aulaDto)
-        // {
-        //     return new Aula
-        //     {
-        //         Id = aulaDto.Id,
-        //         Nombre = aulaDto.Nombre,
-        //     };
-        // }
-
-        // public static Tareas ToModel(this TareaDto tareasDto)
-        // {
-        //     return new Tareas
-        //     {
-        //         Id = tareasDto.Id,
-        //         Nombre = tareasDto.Nombre,
-        //         Descripcion = tareasDto.Descripcion,
-        //         FechaEx = tareasDto.FechaEx
-        //     };
-        // }
     }
 }

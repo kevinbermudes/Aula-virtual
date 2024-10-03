@@ -1,4 +1,5 @@
-﻿using Webvs2.DTO;
+﻿using Microsoft.EntityFrameworkCore;
+using Webvs2.DTO;
 using Webvs2.Mappers;
 using Webvs2.Models;
 
@@ -14,8 +15,11 @@ public class AulaService : IAula
 
         public IEnumerable<AulaDto> GetAula()
         {
-            var aula = _context.Aulas.ToList();
-            return aula.Select(t => t.ToDto()).ToList();
+            var aulas = _context.Aulas
+                .Include(a => a.Alumnos) 
+                .ToList();
+
+            return aulas.Select(a => a.ToDto()).ToList();
         }
 
       

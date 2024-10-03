@@ -16,10 +16,8 @@ namespace Webvs2.Models
         [Required]
         [Column(TypeName = "varchar(100)")]
         public string? Descripcion { get; set; }
-        public string  FechaEx { get; set; }
+        public DateTime  FechaEx { get; set; }
         
-        public virtual Alumno? Alumno { get; set; }
-
         public ICollection<AlumnoTarea> AlumnoTareas { get; set; } = new List<AlumnoTarea>();
 
 

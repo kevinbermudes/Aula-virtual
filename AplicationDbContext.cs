@@ -23,9 +23,9 @@ namespace Webvs2
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Aula>()
-                .HasMany(e => e.Alumnos)
-                .WithOne(e => e.Aula)
-                .HasForeignKey(e => e.AulaId);
+                .HasMany(a => a.Alumnos)
+                .WithOne(a => a.Aula)
+                .HasForeignKey(a => a.AulaId);
 
             modelBuilder.Entity<AlumnoTarea>()
                 .HasKey(at => new { at.AlumnoId, at.TareaId });
@@ -39,8 +39,6 @@ namespace Webvs2
                 .HasOne(at => at.Tarea)
                 .WithMany(t => t.AlumnoTareas)
                 .HasForeignKey(at => at.TareaId);
-            
-
         }
     }
 }
