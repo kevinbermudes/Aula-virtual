@@ -1,5 +1,5 @@
 ﻿export interface Tareas {
-  id?: number;
+ // id?: number;
   nombre? :string;
   descripcion?: string;
   fechaEx?: string;

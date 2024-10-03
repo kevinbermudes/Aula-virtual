@@ -11,7 +11,11 @@ namespace Webvs2.Models
         [Required]
         [Column(TypeName = "varchar(100)")]
         public string? Nombre { get; set; }
+        
+        
+        [ForeignKey("Alumno")]
+        public string? NombreAlumnoEnAula { get; set; }
 
-        public IEnumerable<Alumno> Alumnos;
+        public ICollection<Alumno>? Alumnos { get; set; } = new List<Alumno>();
     }
 }

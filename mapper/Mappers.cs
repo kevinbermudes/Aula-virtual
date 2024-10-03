@@ -12,10 +12,10 @@ namespace Webvs2.Mappers
             return new AlumnoDto
             {
                 Id = alumno.Id,
-                Nombre = alumno.Nombre,
+                Nombre = alumno.NombreAlumno,
                 Apellido = alumno.Apellido,
                 AulaId = alumno.Aula?.Id,
-                TareaId = alumno.TareaId
+                TareaId = alumno.AulaId
             };
         }
 
@@ -25,7 +25,8 @@ namespace Webvs2.Mappers
             {
                 Id = aula.Id,
                 Nombre = aula.Nombre,
-                AlumnoNombres = aula.Alumnos.Select(a => a.Nombre).ToList()            };
+                NombreAlumnoEnAula = aula.NombreAlumnoEnAula
+            };
         }
 
         public static TareaDto ToDto(this Tareas tareas)

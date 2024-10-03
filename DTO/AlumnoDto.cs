@@ -6,5 +6,5 @@ public class AlumnoDto
     public string? Nombre { get; set; }
     public string? Apellido { get; set; }
     public int? AulaId { get; set; }
-    public int? TareaId { get; set; }
+    public int? TareaId { get; set; } 
 }

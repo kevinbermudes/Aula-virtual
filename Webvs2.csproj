@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Angular\src\app\componen\" />
+    <Folder Include="Angular\src\app\Contador\" />
   </ItemGroup>
 
 </Project>

@@ -20,7 +20,7 @@ namespace Webvs2.Models
         
         public virtual Alumno? Alumno { get; set; }
 
-        public ICollection<Alumno> Alumnos { get; set; }
+        public ICollection<AlumnoTarea> AlumnoTareas { get; set; } = new List<AlumnoTarea>();
 
 
     }

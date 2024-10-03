@@ -22,9 +22,25 @@ namespace Webvs2
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Aula>().HasMany(e => e.Alumnos).WithOne(e => e.Aula);
-            modelBuilder.Entity<Tareas>().HasMany(e => e.Alumnos).WithMany(e => e.Tareas);
+            modelBuilder.Entity<Aula>()
+                .HasMany(e => e.Alumnos)
+                .WithOne(e => e.Aula)
+                .HasForeignKey(e => e.AulaId);
+
+            modelBuilder.Entity<AlumnoTarea>()
+                .HasKey(at => new { at.AlumnoId, at.TareaId });
+
+            modelBuilder.Entity<AlumnoTarea>()
+                .HasOne(at => at.Alumno)
+                .WithMany(a => a.AlumnoTareas)
+                .HasForeignKey(at => at.AlumnoId);
+
+            modelBuilder.Entity<AlumnoTarea>()
+                .HasOne(at => at.Tarea)
+                .WithMany(t => t.AlumnoTareas)
+                .HasForeignKey(at => at.TareaId);
             
+
         }
     }
 }

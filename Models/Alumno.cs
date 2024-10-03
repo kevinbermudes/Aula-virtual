@@ -10,24 +10,17 @@ namespace Webvs2.Models
 
         [Required]
         [Column(TypeName ="varchar(100)")]
-        public string? Nombre { get; set; }
+        public string? NombreAlumno { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(100)")]
         public string? Apellido { get; set; }
 
 
-        /*
-        [ForeignKey("Aula")]
-        */
-        /*
-        public int? AulaId { get; set; } 
-        */
+        public int? AulaId { get; set; }
         public virtual Aula? Aula { get; set; }
-        
-        [ForeignKey("Tareas")]
-        public int? TareaId { get; set; }
-        public ICollection<Tareas>? Tareas { get; set; } 
+
+        public ICollection<AlumnoTarea> AlumnoTareas { get; set; } = new List<AlumnoTarea>();
 
     }
 }
